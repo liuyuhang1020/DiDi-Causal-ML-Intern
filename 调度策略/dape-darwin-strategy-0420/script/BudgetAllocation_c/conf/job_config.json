@@ -1,0 +1,14 @@
+{
+    "hdfs": {
+        "base_path": "/user/pricing_driver/competition_city_strategies/raw_grid_data",
+        "ftp_path": "/user/pricing_driver/norns_ftp/",
+        "ab_path": "/user/pricing_driver/norns_ab_ftp/"
+    },
+    "monitor": {
+        "monitor_type": "stdout",
+        "dchat_note_url": "https://im-dichat.xiaojukeji.com/api/hooks/incoming/1d91b2f3-32ec-4720-a4ef-c3ecfb554242"
+    },
+    "stg_callback_api_test": "http://dape-driver-test.didichuxing.com/darwin/decision/adddecisiondetail",
+    "stg_callback_api_pre": "http://dape-driver-test.didichuxing.com/darwin/decision/adddecisiondetail",
+    "stg_callback_api": "http://10.88.128.149:32234/darwin/decision/adddecisiondetail"
+}

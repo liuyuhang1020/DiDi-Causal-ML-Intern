@@ -1,0 +1,30 @@
+[common]
+stg_callback_api_test = "http://10.186.3.136:8000/api/v1/strategy/callback"
+stg_callback_api_pre = "http://10.168.115.12:8000/api/v1/strategy/callback"
+stg_callback_api = "http://10.88.128.149:30476/api/v1/strategy/callback"
+
+
+[optimise]
+lower_bound=0.002
+upper_bound=0.04
+
+[data]
+DB = "prod_smt_stg"
+
+
+driver_online_time_tbl = "gulfstream_dwd.dwd_driver_online"
+sunrise_model_label_tbl = "smt_dw.dm_sunrise_model_label_v1"
+
+budget_pitfill_tbl = "symphony_budget_pitfill"
+budget_pitfill_tbl_columns = ['pre_date','city_id','start_time','end_time','fence_id','fence_grid_list','budget', 'type']
+
+model_predicitons_tbl = "symphony_model_predicitons"
+model_predicitons_tbl_columns = ['pre_date','city_id','start_time','end_time','fence_id','fence_grid_list','predictions']
+
+answer_rate_tbl = "symphony_answer_rate_hourly"
+answer_rate_columns = ['city_id', 'pred_date', 'hour', 'supply', 'demand', 'model_params']
+
+
+
+[spark]
+job_queue = "root.pricing_driver_prod"

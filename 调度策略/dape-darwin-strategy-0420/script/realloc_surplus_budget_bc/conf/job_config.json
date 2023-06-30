@@ -1,0 +1,27 @@
+{
+    "hdfs": {
+        "base_path": "/user/pricing_driver/competition_city_strategies/raw_grid_data",
+        "ftp_path": "/user/pricing_driver/norns_ftp/",
+        "ab_path": "/user/pricing_driver/norns_ab_ftp/"
+    },
+    "monitor": {
+        "monitor_type": "stdout",
+        "dchat_note_url": "https://im-dichat.xiaojukeji.com/api/hooks/incoming/1d91b2f3-32ec-4720-a4ef-c3ecfb554242"
+    },
+    "callback_api_test": "http://dape-driver-test.didichuxing.com/darwin/",
+    "callback_api_pre": "http://10.88.151.15:20627/darwin/",
+    "callback_api": "http://10.88.128.149:32234/darwin/",
+    "zhanqu_city_lists": [4, 7, 9, 11, 15, 17],
+
+    "shumeng_ori_c_table_path":"ly/bc_realloc_system/{}/shumeng/ori_c.csv",
+    "shumeng_ori_b_table_path":"ly/bc_realloc_system/{}/shumeng/ori_b.csv",
+    "shumeng_bc_table_path":"ly/bc_realloc_system/{}/shumeng/bc.csv",
+    "online_request_ori_c_table_path":"ly/bc_realloc_system/{}/online_request/ori_c.csv",
+    "online_request_ori_b_table_path":"ly/bc_realloc_system/{}/online_request/ori_b.csv",
+    "online_request_bc_table_path":"ly/bc_realloc_system/{}/online_request/bc_test.csv",
+    
+    "total_result_path":"ly/bc_realloc_system/{}/{}/total_{}.csv",
+    "daily_result_path":"ly/bc_realloc_system/{}/{}/daily_{}.csv",
+    "tengnuo_city_lists":[1,2,3,5,4,7,9,11,15,17,13,16,26,21,23,18,10,36,24,32,6,19,20,35,34,85,14,86,133,12,47,33,132,38,82,8,22,88,83,89,25,87,84,158,45,153,29,143,62,37,46,90,92,157,39,154,81,58,160,102,159,48,105,135,50,142,44,116,134,49,41,94,253,91,106,53,28,178,27,95,254,40,155,224,138,173,54,257,140,93,79,97,256,283,226,156,136,306,255,63],
+    "holiday_set":["2021-04-03", "2021-04-04", "2021-04-05","2021-05-01", "2021-05-02", "2021-05-03", "2021-05-04", "2021-05-05", "2021-06-12", "2021-06-13", "2021-06-14", "2021-09-19", "2021-09-20", "2021-09-21", "2021-10-01", "2021-10-02", "2021-10-03", "2021-10-04", "2021-10-05", "2021-10-06", "2021-10-07"]
+}
