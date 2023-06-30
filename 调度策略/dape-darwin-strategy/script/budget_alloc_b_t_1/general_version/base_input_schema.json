@@ -1,0 +1,142 @@
+{
+    "type": "object",
+    "properties": {
+        "step_start_date": {
+            "type": "string",
+            "patten": "[0~9]{4}-[0~9]{2}-[0~9]{2}"
+        },
+        "is_online": {
+            "type": "string",
+            "enum": ["online", "pre", "test"]
+        },
+        "rely_info": {
+            "type": "object",
+            "properties": {
+                "gmv_dt": {
+                    "type": "string",
+                    "patten": "[0~9]{4}-[0~9]{2}-[0~9]{2}"
+                },
+                "cr": {
+                    "type": "string"
+                },
+                "cr_dt": {
+                    "type": "string",
+                    "patten": "[0~9]{4}-[0~9]{2}-[0~9]{2}"
+                },
+                "cr_type": {
+                    "type": "string",
+                    "enum": ["objective_exp_openapi_pp", "exp_finish_order_pp"]
+                }
+            },
+            "required": ["gmv_dt", "cr_threshold"]
+        },
+        "input_city_info": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "date": {
+                        "type": "string",
+                        "patten": "[0~9]{4}-[0~9]{2}-[0~9]{2}"
+                    },
+                    "city_ids": {
+                        "type": "array",
+                        "items": {
+                            "type": "number",
+                            "minimum": 1,
+                            "maximum": 500
+                        }
+                    },
+                    "product_line": {
+                        "type": "string",
+                        "enum": ["kuaiche", "zhuanche", "chuzuche"]
+                    },
+                    "caller": {
+                        "type": "string",
+                        "enum": ["b"]
+                    }
+                },
+                "required": ["d", "cis", "pl", "ca"]
+            }
+        },
+        "artificial": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "date": {
+                        "type": "string",
+                        "patten": "[0~9]{4}-[0~9]{2}-[0~9]{2}"
+                    },
+                    "city_id": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 500
+                    },
+                    "time_range": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "patten": "[0~9]{2}:[0,3][0]:00"
+                        }
+                    },
+                    "fence_id": {
+                        "type": "number",
+                        "enum": [-1]
+                    },
+                    "caller": {
+                        "type": "string",
+                        "enum": ["b"]
+                    },
+                    "daily_b_rate": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "stg_constrain": {
+            "type": "object",
+            "properties": {
+                "budget_limit": {
+                    "type": "object",
+                    "value": {
+                        "type": "number"
+                    }
+                },
+                "city_day_budget_rate_limit_list": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "date": {
+                                "type": "string",
+                                "patten": "[0~9]{4}-[0~9]{2}-[0~9]{2}"
+                            },
+                            "city_id": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 500
+                            },
+                            "limit": {
+                                "type": "object",
+                                "properties": {
+                                    "max": {
+                                        "type": "number"
+                                    },
+                                    "min": {
+                                        "type": "number"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "required": [
+        "step_start_date", "is_online", "rely_info",
+        "input_city_info", "artificial",
+        "stg_constrain"
+    ]
+}
